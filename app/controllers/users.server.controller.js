@@ -1,5 +1,5 @@
 var User = require('mongoose').model('User');
-exports.create = function(req, res, next) {
+exports.create = function(req, res, next) {    
   if (req.session.lastVisit) {
        console.log(req.session.lastVisit);
   }
