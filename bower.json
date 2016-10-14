@@ -1,0 +1,10 @@
+{
+  "name": "mean",
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "bootstrap": "latest",
+    "angular-route": "latest",
+    "angular-resource":"latest",
+  }
+}
