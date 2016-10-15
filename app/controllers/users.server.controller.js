@@ -1,14 +1,13 @@
 var User = require('mongoose').model('User');
 exports.create = function(req, res, next) {    
-  if (req.session.lastVisit) {
-       console.log(req.session.lastVisit);
-  }
-    req.session.lastVisit = new Date(); 
+    
+    console.log("before:"+req.body);
      var user = new User(req.body); 
-     user.save(function(err) {  //callback
+      user.save(function(err) {  //callback
        if (err) {
          return next(err);
        } else {
+        console.log("after:"+user);
          res.json(user);
        }
 	}); 
@@ -67,13 +66,5 @@ exports.delete = function(req, res, next) {
     })
 };
 
-exports.render = function(req, res) {
-  if (req.session.lastVisit) {
-       console.log(req.session.lastVisit);
-  }
-    req.session.lastVisit = new Date(); 
-    res.render('index',{
-      lastvisit: req.session.lastVisit 
-    });
-};
+
 

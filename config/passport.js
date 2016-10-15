@@ -2,13 +2,13 @@ var passport = require('passport'),
        mongoose = require('mongoose');
 module.exports = function() {
     var User = mongoose.model('User');
-    //store session
+    //store session when a request is made
     passport.serializeUser(function(user, done) {
        done(null, user.id);
        //user.id is saved in the session
     });
 
-    //restrieve session
+    //restrieve persistent session and retrieve the user
     passport.deserializeUser(function(id, done) {
        User.findOne({
          _id: id

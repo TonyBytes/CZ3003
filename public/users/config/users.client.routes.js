@@ -6,7 +6,10 @@ angular.module('users').config(['$routeProvider',
 				redirectTo: '/'	
 			});
 			$routeProvider.when('/signedin',{
-				templateUrl: 'users/views/signedin.client.view.html'
+				templateUrl: 'users/views/list.client.view.html'
 			});
+			$routeProvider.when('/signup',{
+				templateUrl: 'users/views/signup.client.view.html'
+			});	
 		}
 ]);

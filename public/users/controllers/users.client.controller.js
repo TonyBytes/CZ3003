@@ -1,12 +1,12 @@
 angular.module('users').controller('usersController', ['$scope' ,'$location','Users',
-     function($scope) {
+     function($scope , $location,Users) {   /// follow the same order as the injector
        $scope.name = 'MEAN Application';
 
 
 	   $scope.create = function() {
 		var user = new Users({
-		       title: this.username,
-		       content: this.password
+		       username: this.username,
+		       password: this.password
 		});
 		//post?
 		user.$save(function(response) {
@@ -16,6 +16,9 @@ angular.module('users').controller('usersController', ['$scope' ,'$location','Us
 			}); 
 		};
 
+		$scope.find = function(){
+			$scope.users= Users.query();
+		};
      }
 ]);
 
