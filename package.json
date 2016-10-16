@@ -13,6 +13,7 @@
        "connect-flash":"latest",
        "passport-local": "~1.0.0",
        "ejs":"latest",
+       "crypto-js":"latest"
        
 } 
 }

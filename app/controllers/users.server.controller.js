@@ -1,13 +1,11 @@
 var User = require('mongoose').model('User');
 exports.create = function(req, res, next) {    
-    
-    console.log("before:"+req.body);
      var user = new User(req.body); 
       user.save(function(err) {  //callback
        if (err) {
          return next(err);
        } else {
-        console.log("after:"+user);
+        console.log("document created:"+user);
          res.json(user);
        }
 	}); 

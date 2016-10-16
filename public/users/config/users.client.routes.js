@@ -10,6 +10,9 @@ angular.module('users').config(['$routeProvider',
 			});
 			$routeProvider.when('/signup',{
 				templateUrl: 'users/views/signup.client.view.html'
+			});
+			$routeProvider.when('/signin',{
+				templateUrl: 'users/views/signin.client.view.html'
 			});	
 		}
 ]);

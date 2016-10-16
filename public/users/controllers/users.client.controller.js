@@ -19,6 +19,23 @@ angular.module('users').controller('usersController', ['$scope' ,'$location','Us
 		$scope.find = function(){
 			$scope.users= Users.query();
 		};
+
+		$scope.login = function(){
+		
+		var user = new Users({
+		       username: this.username,
+		       password: this.password
+		});
+
+		user.$save(function(response) {
+		       $location.path('/signedin');
+		     }, function(errorResponse) {
+		       $scope.error = errorResponse.data.message;
+			}); 
+		};
+
+		};
+
      }
 ]);
 

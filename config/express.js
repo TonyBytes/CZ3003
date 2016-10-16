@@ -11,13 +11,6 @@ var methodOverride = require('method-override');
 module.exports = function() {
   var app = express(); 
   //add created session middleware for all requests 
-  
-  app.use(session({
-       saveUninitialized: true,
-       resave: true,
-       secret: config.sessionSecret
-	})
-  );
 ///////middleware////////////////////
   //app.use(flash()); // session object used to store temporary messages
 
@@ -33,8 +26,8 @@ module.exports = function() {
      app.use(bodyParser.json());
      app.use(methodOverride());
 
-  //app.use(passport.initialize());
-  //app.use(passport.session());
+  app.use(passport.initialize());
+  app.use(passport.session());
   
   //the app root environment is server.js , 
   //considering the ./app/view is a runtime address
