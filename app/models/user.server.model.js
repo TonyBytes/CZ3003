@@ -1,16 +1,16 @@
 var mongoose = require('mongoose'), Schema = mongoose.Schema;
 var crypto = require('crypto');
 var UserSchema = new Schema({
-     firstName: String,
-     lastName: String,
-     email: String,
 
+     email: String,
      username: {
      	type: String,
      	trim: true,
      	unique: true
      },
      password: String,
+     accountType: String,
+     hp: String,
      salt: String
    });
 
