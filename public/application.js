@@ -1,6 +1,6 @@
 var mainApplicationModuleName = 'mean';
 var mainApplicationModule = angular.module(mainApplicationModuleName, [
-	'users']); 
+	'users','callCenter']); 
 
 mainApplicationModule.config(['$locationProvider',
      function($locationProvider) {

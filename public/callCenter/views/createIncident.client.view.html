@@ -1,0 +1,85 @@
+
+  <section id="container" >
+     
+     <div id="header"></div><br />
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section data-ng-controller="callCenterController" id="main-content">
+          <section class="wrapper site-min-height">
+          	<h2></i> Create Incident</h2>
+          	<div class="row mt">
+          		<div class="col-lg-12">
+                  <div class="form-panel">
+                      <form data-ng-submit="createIncident()"class="form-horizontal style-form" method="get">
+                       
+
+                      <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Incident Name</label>
+                              <div class="col-sm-10">
+                                  <input data-ng-model="incidentName" type="text" class="form-control">
+                              </div>
+                          </div>    
+                       <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Type of Crisis</label>
+                              <div class="col-sm-10">
+                      	<select data-ng-model="type" class="form-control">
+						  <option>Aliens</option>
+						  <option>Monsters</option>
+						</select>
+						   </div>
+                          </div>
+						  
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Victim's Name</label>
+                              <div class="col-sm-10">
+                                  <input data-ng-model="victimName" type="text" class="form-control">
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Victim's Contact Number</label>
+                              <div class="col-sm-10">
+                                  <input data-ng-model="victimContactNumber" type="text" class="form-control">
+                              </div>
+                          </div>
+                      
+
+                     
+        <a href="/#!/callCenter/incident/addTasksForNew" class="btn btn-primary" >Add Tasks</a>
+                   
+					</form>
+               </form>
+                  </div>
+          		</div><!-- col-lg-12-->      	
+          	</div><!-- /row -->          	
+
+
+          		</div>
+          	</div>
+			
+		</section>
+      </section><!-- /MAIN CONTENT -->
+
+      <!--main content end-->
+      
+      <br />
+<div id="footer"></div>
+
+  </section>
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
+  
+<script>
+$("#header").load("callCenter/views/header.html");
+$("#footer").load("callCenter/views/footer.html");
+</script>
+

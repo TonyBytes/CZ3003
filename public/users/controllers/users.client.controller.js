@@ -34,8 +34,6 @@ angular.module('users').controller('usersController', ['$scope' ,'$location','Us
 			}); 
 		};
 
-		};
-
-     }
+		}
 ]);
 

@@ -38,6 +38,7 @@ module.exports = function() {
   
   //bootstrap route
   require('../app/routes/index.server.routes.js')(app); 
+  require('../app/routes/callCenter.server.routes.js')(app); 
   
   app.use(express.static('./public')); //define static file folder  , used at last , otherwise http requests will 
                       //go through this middleware
