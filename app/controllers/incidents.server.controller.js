@@ -6,7 +6,7 @@ exports.create = function(req, res, next) {
          return next(err);
        } else {
         console.log("document created:"+incident);
-         res.json(incident);
+        res.json(incident);
        }
 	}); 
 };

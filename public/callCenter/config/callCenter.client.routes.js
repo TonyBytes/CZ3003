@@ -8,10 +8,8 @@ angular.module('callCenter').config(['$routeProvider',
 			$routeProvider.when('/callCenter/createIncident',{
 				templateUrl: 'callCenter/views/createIncident.client.view.html'
 			});
-			$routeProvider.when('/callCenter/one/:incidentID/assignHeroes',{
-				templateUrl: 'callCenter/views/delegationpage.client.view.html'
-			});
-			$routeProvider.when('/callCenter/one/:incidentID',{
+			
+			$routeProvider.when('/callCenter/incident/:incidentID',{
 				templateUrl: 'callCenter/views/editIncident.client.view.html'
 			});
 			$routeProvider.when('/callCenter/incident',{

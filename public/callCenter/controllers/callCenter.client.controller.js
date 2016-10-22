@@ -12,7 +12,8 @@ angular.module('callCenter').controller('callCenterController', ['$scope' ,'$loc
 		       name: this.incidentName,
 		       type: this.type,
 		       victimName: this.victimName,
-		       victimContactNumber: this.victimContactNumber
+		       victimContactNumber: this.victimContactNumber,
+           tasks:this.tasks
 		});
 		//post?
 		incident.$save(function(response) {
