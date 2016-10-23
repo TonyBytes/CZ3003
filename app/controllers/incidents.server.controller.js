@@ -49,11 +49,12 @@ exports.read = function(req, res) {
 //findByIdAndUpdate(index to search, content to update, callback)
 //register under PUT request
 exports.update = function(req, res, next) {
-  Incident.findByIdAndUpdate(req.incident.id, req.body, function(err, user) {
+  Incident.findByIdAndUpdate(req.incident.id, req.body, function(err, incident) {
     if (err) {
          return next(err);
        } else {
-         res.json(user);
+        console.log('incident edited:' + incident);
+         res.json(incident);
     } 
   });
 };

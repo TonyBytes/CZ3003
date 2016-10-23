@@ -34,18 +34,30 @@ angular.module('callCenter').controller('callCenterController', ['$scope' ,'$loc
     };
 
     $scope.updateIncident = function (){
-
-
       $scope.incident.tasks= $scope.tasks.concat($scope.incident.tasks);
       $scope.incident.$update(function() {
        $location.path('callCenter/incident/' + $scope.incident._id);
      }, function(errorResponse) {
        $scope.error = errorResponse.data.message;
-     });
-
-      
+     }); 
     };
-	}
+
+    $scope.deleteIncident= function (incident){
+      if (incident) {
+       incident.$remove(function() {
+         for (var i in $scope.incidents) {
+           if ($scope.incidents[i] === incident) {
+             $scope.incidents.splice(i, 1);
+              }
+          } });
+        } 
+     else {
+       $scope.incident.$remove(function() {
+         $location.path('callCenter/incident/');
+       });
+    } 
+  };            
+ }
 ]);
 
 // I've created this directive as an example of $compile in action. 
