@@ -10,6 +10,7 @@ angular.module('users').controller('usersController', ['$scope' ,'$location','Us
 		});
 		//post?
 		user.$save(function(response) {
+			
 		       $location.path('/signedin');
 		     }, function(errorResponse) {
 		       $scope.error = errorResponse.data.message;

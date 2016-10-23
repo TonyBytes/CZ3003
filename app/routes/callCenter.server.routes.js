@@ -5,7 +5,11 @@ mySMSAPI= require('../controllers/sms.server.controller.js');
 
 module.exports= function (app){
 	app.route('/callCenter/incident').post(incident.create).get(incident.list);
-	
+	app.route('/callCenter/incident/:incidentId')
+		.get(incident.read)
+		.put(incident.update)
+		.delete(incident.delete);
+
 	app.post('/api/sendMessage', function(req, res) {
 
 	    var toNumber = req.to;
@@ -15,5 +19,7 @@ module.exports= function (app){
 	    console.log("SMS Notification Pushing to... ", toNumber);
 
 	});
+
+	app.param('incidentId', incident.incidentByID);
 }
 

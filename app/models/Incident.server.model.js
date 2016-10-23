@@ -5,7 +5,8 @@ var taskSchema = new Schema({
   sms: String,
   status: {
     type:String,
-    default:"incomplete"}
+    default:"incomplete"},
+  delegate: String
 });
 
 var IncidentSchema = new Schema({

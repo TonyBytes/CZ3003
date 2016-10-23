@@ -23,21 +23,26 @@ exports.list = function(req, res, next) {
 };
 
 //make sure the userByID function are executed before CRUD opeations
-exports.userByID = function(req, res, next, id) {
-     Incident.findOne({
-       _id: id
-     }, function(err, user) {
-       if (err) {
-         return next(err);
-       } else {
-         req.incident = incident;
-         next();
-} });
+exports.incidentByID = function(req, res, next, id) {
+      
+      Incident.findById(id).exec(function(err, incident) {
+        if (err) return next(err);
+        if (!incident) 
+          return next(new Error('Failed to load incident '+ id));
+       req.incident = incident;
+       console.log("Incident fetched " + incident);
+       next();
+      });  
 };
 
 
+
+
+
 exports.read = function(req, res) {
+     console.log("Incident fetched " + req.incident);     
      res.json(req.incident);
+
 };
 
 

@@ -64,5 +64,9 @@ exports.delete = function(req, res, next) {
     })
 };
 
+exports.categorize = function(req , res, next){
+    res.json(req.user);
+};
+
 
 

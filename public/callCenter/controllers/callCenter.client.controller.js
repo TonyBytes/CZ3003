@@ -1,5 +1,5 @@
-angular.module('callCenter').controller('callCenterController', ['$scope' ,'$location','Incident',
-     function($scope , $location,Incident) {   /// follow the same order as the injector
+angular.module('callCenter').controller('callCenterController', ['$scope' ,'$location', '$routeParams','Incident',
+     function($scope , $location, $routeParams ,Incident) {   /// follow the same order as the injector
 
     	$scope.tasks = [];
     // Create a counter to keep track of the additional telephone inputs
@@ -27,6 +27,24 @@ angular.module('callCenter').controller('callCenterController', ['$scope' ,'$loc
 			$scope.incidents= Incident.query();
 		};
 
+    $scope.findIncident = function (){
+      $scope.incident = Incident.get({
+        incidentId:$routeParams.incidentId 
+      });
+    };
+
+    $scope.updateIncident = function (){
+
+
+      $scope.incident.tasks= $scope.tasks.concat($scope.incident.tasks);
+      $scope.incident.$update(function() {
+       $location.path('callCenter/incident/' + $scope.incident._id);
+     }, function(errorResponse) {
+       $scope.error = errorResponse.data.message;
+     });
+
+      
+    };
 	}
 ]);
 
@@ -42,7 +60,7 @@ angular.module('callCenter').directive('addTask', ['$compile', function ($compil
                 var input = angular.element(
                 	
             '<div class="form-group">'+
-                              '<label class="col-sm-2 col-sm-2 control-label">Task 1</label>'+
+                              '<label class="col-sm-2 col-sm-2 control-label">Task Message</label>'+
                               '<div class="col-sm-10">'+
                                   '<input data-ng-model="tasks['+scope.inputCounter+'].sms" type="text" class="form-control">'+
                               '</div></div>'+

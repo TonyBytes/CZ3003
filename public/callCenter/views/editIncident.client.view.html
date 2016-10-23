@@ -1,10 +1,13 @@
+      <div id="header"></div>
       <section id="main-content">
           <section data-ng-controller="callCenterController" class="wrapper site-min-height">
             <h2></i> Edit Incident</h2>
             <div class="row mt">
               <div class="col-lg-12">
                   <div class="form-panel">
-                      <form data-ng-init="findIncident()" class="form-horizontal style-form">
+                      <form data-ng-init="findIncident()" 
+                      data-ng-submit="updateIncident()"
+                      class="form-horizontal style-form">
                       
              
                       
@@ -53,7 +56,47 @@
                               </div>
                           </div>
                           
-  
+              
+
+            <li data-ng-repeat= "task in incident.tasks" >              
+              <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Task Name</label>
+                              <div class="col-sm-10">
+                                  <input ng-data-model="task.sms" type="text" class="form-control">
+                              </div>
+                          </div>
+              
+            <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Priority Level</label>
+                              <div class="col-sm-10">
+                        <select ng-data-model="task.priority" class="form-control">
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                            </div>
+            </div>
+             
+              <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Agent</label>
+                              <div class="col-sm-10">
+                        <select ng-data-model="task.delegate" class="form-control">
+              <option>A.S Clement</option>
+              <option>A.S Jessica</option>
+              <option>A.S James</option>
+              <option>M.S Liam</option>
+              <option>M.S Tina</option>
+              <option>M.S Scarlet</option>
+            </select>
+                </div>
+                        </div>
+             <a href="delegationpage.html" class="btn btn-primary" role="button">Check Delegation<a>
+             </br></br>
+          </li> 
+
+        <div add-Task>
+         <a class="btn btn-primary" id="addTask" >Add Task</a> </br></br>  
+        </div>  
             
             
                 

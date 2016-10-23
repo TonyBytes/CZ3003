@@ -9,7 +9,7 @@ angular.module('callCenter').config(['$routeProvider',
 				templateUrl: 'callCenter/views/createIncident.client.view.html'
 			});
 			
-			$routeProvider.when('/callCenter/incident/:incidentID',{
+			$routeProvider.when('/callCenter/incident/:incidentId',{
 				templateUrl: 'callCenter/views/editIncident.client.view.html'
 			});
 			$routeProvider.when('/callCenter/incident',{
