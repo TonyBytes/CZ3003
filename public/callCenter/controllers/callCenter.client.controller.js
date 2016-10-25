@@ -36,6 +36,8 @@ angular.module('callCenter').controller('callCenterController', ['$scope' ,'$loc
     $scope.updateIncident = function (){
       $scope.incident.tasks= $scope.tasks.concat($scope.incident.tasks);
       $scope.incident.$update(function() {
+              $scope.tasks = [];
+              $scope.inputCounter = 0;
        $location.path('callCenter/incident/' + $scope.incident._id);
      }, function(errorResponse) {
        $scope.error = errorResponse.data.message;
