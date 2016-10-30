@@ -1,44 +1,22 @@
-      <section data-ng-controller="usersController">
-          <section class="wrapper site-min-height">
-          	<h2></i> Sign In</h2>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-                  <div class="form-panel">
-                      <form class="form-horizontal style-form" data-ng-submit="login()" novalidate>
-                          
-                       <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Account Type</label>
-                              <div class="col-sm-10">
-                                          <select class="form-control">
-                                <option>call Center</option>
-                                <option>Super Hero</option>
-                                <option>Government Official </option>
-                              
-                              </select>
-                                 </div>
-                        </div>
-                           
-                    <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Username</label>
-                              <div class="col-sm-10">
-                                  <input data-ng-model='username' type="text" class="form-control">
-                              </div>
-                          </div>
+<div data-ng-controller="usersController" id="login-page">
+      <div class="container">
+      
+          <form class="form-login" data-ng-submit="signin()">
+            <h2 class="form-login-heading">sign in</h2>
+            <div class="login-wrap">
+                <input data-ng-model="username" type="text" class="form-control" placeholder="User ID" autofocus>
+                <br>
+                <input data-ng-model="password" type="password" class="form-control" placeholder="Password">
+           <br>
+            <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> Sign in</button>
+           
+          
+               
+                <hr>
+                 </form>
 
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Password</label>
-                              <div class="col-sm-10">
-                                  <input data-ng-model='password' type="password" class="form-control">
-                              </div>
-                          </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                   
-                      </form>
-                      <a href="/#!/signup">Sign Up</a>
-
-                  </div>
-          		</div><!-- col-lg-12-->      	
-          	</div><!-- /row -->          	
-		    </section>
-      </section><!-- /MAIN CONTENT -->
-
+  <a href="/#!/signup"><button type="button" class="btn btn-theme btn-block"><i class="fa fa-sign-in"></i> Sign Up</button></a>
+    
+            </div>
+    
+      </div>

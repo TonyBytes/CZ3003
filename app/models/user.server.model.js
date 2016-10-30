@@ -33,7 +33,7 @@ var UserSchema = new Schema({
 
      //authenticate
      UserSchema.methods.authenticate = function(password) {
-          return this.password === password;
+          return this.password === this.hashPassword(password);
      };
 
 

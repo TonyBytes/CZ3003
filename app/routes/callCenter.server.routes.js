@@ -1,5 +1,3 @@
-
-
 incident= require('../controllers/incidents.server.controller.js');
 mySMSAPI= require('../controllers/sms.server.controller.js');
 

@@ -65,6 +65,9 @@ exports.delete = function(req, res, next) {
 };
 
 exports.categorize = function(req , res, next){
+    console.log("error:"+req.flash('error'));
+    console.log("User info" + req.user);
+    
     res.json(req.user);
 };
 
