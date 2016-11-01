@@ -1,5 +1,5 @@
-angular.module('users').controller('usersController', ['$scope' ,'$location',"$http",'Users','Login', 'Authentication',
-     function($scope , $location,$http,Users, Login , Authentication) {   /// follow the same order as the injector
+angular.module('users').controller('usersController', ['$scope' ,'$location',"$window",'Users','Login', 'Authentication',
+     function($scope , $location,$window,Users, Login , Authentication) {   /// follow the same order as the injector
        $scope.name = 'MEAN Application';
 
 
@@ -32,13 +32,12 @@ angular.module('users').controller('usersController', ['$scope' ,'$location',"$h
 			});
 			//post?
 			logger.$save(function(response) {
-			
-		       	if(response.accountType=="Call Center")
-			    	$location.path('/callCenter');
-			    if(reponse.accountType=="Super Hero")
-			    	$location.path('/superHero');
-			    else
-			    	$location.path('/');
+				if(response.user){
+					if(response.user.accountType="Call Center")
+						$location.path('callCenter');
+				}
+				$scope.error = response.error;
+
 		     }, function(errorResponse) {
 		       $scope.error = errorResponse.data.message;
 			}); 

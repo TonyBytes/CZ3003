@@ -2,6 +2,7 @@ incident= require('../controllers/incidents.server.controller.js');
 mySMSAPI= require('../controllers/sms.server.controller.js');
 
 module.exports= function (app){
+	app.route('/callCenter').get(incident.render);
 	app.route('/callCenter/incident').post(incident.create).get(incident.list);
 	app.route('/callCenter/incident/:incidentId')
 		.get(incident.read)

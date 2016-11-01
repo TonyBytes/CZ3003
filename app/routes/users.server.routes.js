@@ -4,11 +4,9 @@ var passport = require('passport');
     app.route('/signup').post(users.create).get(users.list);  //callback
 	app.route('/signin')
         .post(passport.authenticate('local', {
-          successRedirect: '/signInSuccess',
-          failureRedirect: '/signInSuccess',
+          successRedirect: '/signInResult',
+          failureRedirect: '/signInResult',
           failureFlash: true
 		}));
-	 app.route('/signInSuccess').get(users.categorize);
-
-	 
+	 app.route('/signInResult').get(users.categorize); 
 };

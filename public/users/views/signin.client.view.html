@@ -3,7 +3,11 @@
       
           <form class="form-login" data-ng-submit="signin()">
             <h2 class="form-login-heading">sign in</h2>
+            
             <div class="login-wrap">
+                
+                <p data-ng-model="error"></p>
+              
                 <input data-ng-model="username" type="text" class="form-control" placeholder="User ID" autofocus>
                 <br>
                 <input data-ng-model="password" type="password" class="form-control" placeholder="Password">

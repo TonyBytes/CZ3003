@@ -47,6 +47,13 @@
 <script type="text/javascript" src="/users/controllers/users.client.controller.js"></script>
 <script type="text/javascript" src="/users/config/users.client.routes.js"></script>
 
+<script type="text/javascript" src="/callCenter/callCenter.client.module.js"></script> <!--load before application.js, which will inject users-->
+<script type="text/javascript" src="/callCenter/services/incidents.client.service.js"></script> 
+<script type="text/javascript" src="/callCenter/controllers/callCenter.client.controller.js"></script>
+<script type="text/javascript" src="/callCenter/config/callCenter.client.routes.js"></script>
+
+<script type="text/javascript" src="/callCenterApplication.js"></script>
+
 
 <script type="text/javascript" src="/application.js"></script>
 <script type="text/javascript">

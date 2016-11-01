@@ -1,4 +1,10 @@
 var Incident = require('mongoose').model('Incident');
+exports.render= function(req , res, next){
+      res.render('callCenter',{
+      user:JSON.stringify(req.user)
+    });
+}
+
 exports.create = function(req, res, next) {    
      var incident = new Incident(req.body); 
       incident.save(function(err) {  //callback
